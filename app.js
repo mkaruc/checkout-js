@@ -1,26 +1,26 @@
-const removeButton= document.getElementById("remove")
+const removeButton= document.querySelectorAll("#remove")
 removeButton.forEach(item => {
     item.addEventListenter("click", () => {
-        item.parentElement.parentElement.parentElement.parentElement.style.display="none"
+        item.parentElement.parentElement.parentElement.style.display="none"
         item.parentElement.nextElementSibling.querySelector("p>span").innerHTML = 0
         updateTotal()
     })
 })
 
-const totalPrice=document.getElementById("productTotal")
+const totalPrice=document.querySelectorAll("#productTotal")
 const totalPriceUpdating = function() {
     totalPrice.forEach((item) => {
-        const parent = item.parentNode.parentNode.parentNode.parentNode
+        const parent = item.parentNode.parentNode.parentNode.parentNode.parentNode
 
-        const unitPrice = parent.getElementById("price").innerHTML
+        const unitPrice = parent.querySelectorAll("#product>#productFeatures>#productPrice>#price").innerHTML
 
-        const quantity = parent.getElementById("quantity").innerHTML
+        const quantity = parent.querySelectorAll("#numberOfProducts>#quantity").innerHTML
 
         item.innerHTML = (unitPrice * quantity).toFixed(2)
     })
 }
 
-const decreaseButton = document.getElementById("decrease")
+const decreaseButton = document.querySelectorAll("#decrease")
 
 decreaseButton.forEach( item => {
     const result = item.nextElementSibling
@@ -34,7 +34,7 @@ decreaseButton.forEach( item => {
     })
 })
 
-const increaseButton = document.getElementById("increase")
+const increaseButton = document.querySelectorAll("#increase")
 
 increaseButton.forEach(item => {
     const result = item.previousElementSibling
@@ -45,11 +45,11 @@ increaseButton.forEach(item => {
     })
 })
 
-const total = document.getElementById("total")
+const total = document.querySelectorAll("#total")
 
-const subtotal = document.getElementById("subtotal")
+const subtotal = document.querySelectorAll("#subtotal")
 
-const tax = document.getElementById("tax")
+const tax = document.querySelectorAll("#tax")
 
 const updateTotal = function() {
     let endTotal = 0

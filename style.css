@@ -1,0 +1,58 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#container{
+    padding: 2rem;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(187, 187, 187, 0.445);
+}
+#product{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+}
+img{
+    margin: 1rem;
+    border-radius: 10px;
+    width: 150px;
+}
+#numberOfProducts{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0.5rem 0px;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: space-around;
+}
+button{
+    border: none;
+}
+ion-icon[name="remove-outline"],
+ion-icon[name="add-outline"] {
+  color: black;
+  background-color: rgb(247, 172, 103);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+#remove{
+    padding: 0.5rem;
+    background-color: rgb(185, 64, 43);
+    color: white;
+    border-radius: 5px;
+}
+#productPrice{
+    
+}

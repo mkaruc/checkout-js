@@ -1,6 +1,4 @@
-console.log("deneme")
-
-const removeButton= document.querySelectorAll("#remove")
+const removeButton= document.querySelectorAll(".remove")
 removeButton.forEach(item => {
     item.addEventListener("click", () => {
         item.parentElement.parentElement.parentElement.style.display="none"
@@ -9,20 +7,20 @@ removeButton.forEach(item => {
     })
 })
 
-const totalPrice=document.querySelectorAll("#countedTotal")
+const totalPrice=document.querySelectorAll(".countedTotal")
 const totalPriceUpdating = function() {
     totalPrice.forEach((item) => {
         const parent = item.parentNode.parentNode.parentNode.parentNode
 
-        const unitPrice = parent.querySelectorAll("#product>#productFeatures>#totalCost>#productTotal>#countedTotal").innerHTML
+        const unitPrice = parent.querySelector(".price").innerHTML
 
-        const quantity = parent.querySelectorAll("#product>#productFeatures>#numberOfProducts>#quantity").innerHTML
-        
+        const quantity = parent.querySelector(".quantity").innerHTML
+console.log(quantity)        
         item.innerHTML = (unitPrice * quantity).toFixed(2)
     })
 }
 
-const decreaseButton = document.querySelectorAll("#decrease")
+const decreaseButton = document.querySelectorAll(".decrease")
 
 decreaseButton.forEach( item => {
     const result = item.nextElementSibling
@@ -30,13 +28,13 @@ decreaseButton.forEach( item => {
     item.addEventListener("click", ()=>{
         if(result.innerHTML > 1){
             result.innerHTML--
-        }
+        
         totalPriceUpdating()
-        updateTotal()
+        updateTotal()}
     })
 })
 
-const increaseButton = document.querySelectorAll("#increase")
+const increaseButton = document.querySelectorAll(".increase")
 
 increaseButton.forEach(item => {
     const result = item.previousElementSibling
@@ -47,16 +45,16 @@ increaseButton.forEach(item => {
     })
 })
 
-const total = document.querySelectorAll("#total")
+const total = document.querySelector("#total")
 
-const subtotal = document.querySelectorAll("#subtotal")
+const subtotal = document.querySelector("#subtotal")
 
-const tax = document.querySelectorAll("#tax")
+const tax = document.querySelector("#tax")
 
 const updateTotal = function() {
     let endTotal = 0
 
-    total.forEach(item => {
+    totalPrice.forEach(item => {
         endTotal += +item.innerHTML
     })
 

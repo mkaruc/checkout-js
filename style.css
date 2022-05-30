@@ -19,7 +19,7 @@ header{
     border-radius: 15px;
     background-color: rgba(187, 187, 187, 0.445);
 }
-#product{
+.product{
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
@@ -30,7 +30,7 @@ img{
     border-radius: 10px;
     width: 150px;
 }
-#numberOfProducts{
+.numberOfProducts{
     display: flex;
     flex-direction: row;
     border: 1px solid rgb(134, 133, 133);
@@ -55,28 +55,28 @@ ion-icon[name="remove-outline"]:hover,
 ion-icon[name="add-outline"]:hover{
     background-color: rgb(202, 142, 86);
 }
-#remove{
+.remove{
     padding: 0.5rem;
     background-color: rgb(185, 64, 43);
     color: white;
     border-radius: 5px;
 }
-#remove:hover{
+.remove:hover{
     background-color: brown;
 }
-#price{
+.price{
     color: orangered;
 }
-#oldPrice{
+.oldPrice{
     font-size: 12px;
 }
-#productTotal{
+.productTotal{
     padding: 0.5rem;
 }
-#productTotal span{
+.productTotal span{
     font-weight: 600;
 }
-#countingArea{
+.countingArea{
     display: flex;
     align-items: center;
     justify-content: space-between;

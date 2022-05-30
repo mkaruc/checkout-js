@@ -1,21 +1,23 @@
+console.log("deneme")
+
 const removeButton= document.querySelectorAll("#remove")
 removeButton.forEach(item => {
-    item.addEventListenter("click", () => {
+    item.addEventListener("click", () => {
         item.parentElement.parentElement.parentElement.style.display="none"
         item.parentElement.nextElementSibling.querySelector("p>span").innerHTML = 0
         updateTotal()
     })
 })
 
-const totalPrice=document.querySelectorAll("#productTotal")
+const totalPrice=document.querySelectorAll("#countedTotal")
 const totalPriceUpdating = function() {
     totalPrice.forEach((item) => {
-        const parent = item.parentNode.parentNode.parentNode.parentNode.parentNode
+        const parent = item.parentNode.parentNode.parentNode.parentNode
 
-        const unitPrice = parent.querySelectorAll("#product>#productFeatures>#productPrice>#price").innerHTML
+        const unitPrice = parent.querySelectorAll("#product>#productFeatures>#totalCost>#productTotal>#countedTotal").innerHTML
 
-        const quantity = parent.querySelectorAll("#numberOfProducts>#quantity").innerHTML
-
+        const quantity = parent.querySelectorAll("#product>#productFeatures>#numberOfProducts>#quantity").innerHTML
+        
         item.innerHTML = (unitPrice * quantity).toFixed(2)
     })
 }
@@ -70,3 +72,4 @@ const updateTotal = function() {
 }
 
 updateTotal()
+
